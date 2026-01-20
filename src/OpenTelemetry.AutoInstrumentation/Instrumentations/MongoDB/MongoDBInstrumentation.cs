@@ -50,11 +50,9 @@ internal static class MongoDBInstrumentation
 
     private static ActivitySource CreateActivitySource()
     {
-        var assemblyName = typeof(MongoDBInstrumentation).Assembly.GetName();
-        var version = assemblyName.Version?.ToString();
-        var activitySourceOptions = new ActivitySourceOptions(assemblyName.Name!)
+        var activitySourceOptions = new ActivitySourceOptions("OpenTelemetry.AutoInstrumentation.MongoDB")
         {
-            Version = version,
+            Version = AutoInstrumentationVersion.Version,
             TelemetrySchemaUrl = "https://opentelemetry.io/schemas/1.39.0",
         };
 

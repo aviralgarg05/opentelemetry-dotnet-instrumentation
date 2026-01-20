@@ -39,7 +39,24 @@ This component adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 - Following packages updated
   - `OpenTelemetry.Instrumentation.SqlClient` from `1.14.0-beta.1` to `1.14.0-rc.1`.
 - .NET Framework only, following packages updated
-  - `OpenTelemetry.Instrumentation.AspNet` from `1.14.0-rc.1` to `1.14.0`.
+  - `OpenTelemetry.Instrumentation.AspNet` from `1.14.0-rc.1` to `1.14.0`,
+  - `Microsoft.Bcl.AsyncInterfaces` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.Configuration` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.Configuration.Abstractions` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.Configuration.Binder` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.DependencyInjection` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.DependencyInjection.Abstractions` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.Diagnostics.Abstractions` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.Logging` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.Logging.Abstractions` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.Logging.Configuration` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.Options` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.Options.ConfigurationExtensions` from `10.0.0` to `10.0.2`,
+  - `Microsoft.Extensions.Primitives` from `10.0.0` to `10.0.2`,
+  - `System.Diagnostics.DiagnosticSource` from `10.0.0` to `10.0.2`,
+  - `System.IO.Pipelines` from `10.0.0` to `10.0.2`,
+  - `System.Text.Encodings.Web` from `10.0.0` to `10.0.2`,
+  - `System.Text.Json` from `10.0.0` to `10.0.2`.
 
 ### Deprecated
 
@@ -79,6 +96,8 @@ release.
 - Setting `DOTNET_STARTUP_HOOKS` is now optional if the .NET CLR profiler
   is configured. If it is not set, the profiler looks for the startup hooks
   assembly and injects the configuration into the application.
+- `OpenTelemetry.AutoInstrumentation.` prefixed instrumentations
+  report Scope Version.
 
 #### Dependency updates
 
