@@ -13,7 +13,9 @@ namespace OpenTelemetry.AutoInstrumentation.Instrumentations.MongoDB;
 
 internal static class MongoDBInstrumentation
 {
-    private static readonly ActivitySource Source = CreateActivitySource();
+    private static readonly ActivitySource Source = new(
+        "OpenTelemetry.AutoInstrumentation.MongoDB",
+        AutoInstrumentationVersion.Version);
     private static readonly PropertyInfo? MongoCommandExceptionCodePropertyInfo;
 
     static MongoDBInstrumentation()
@@ -106,17 +108,6 @@ internal static class MongoDBInstrumentation
                 // accessing the property failed, ignore
             }
         }
-    }
-
-    private static ActivitySource CreateActivitySource()
-    {
-        var activitySourceOptions = new ActivitySourceOptions("OpenTelemetry.AutoInstrumentation.MongoDB")
-        {
-            Version = AutoInstrumentationVersion.Version,
-            TelemetrySchemaUrl = "https://opentelemetry.io/schemas/1.39.0",
-        };
-
-        return new ActivitySource(activitySourceOptions);
     }
 
     private static bool TryGetDatabaseName(object instance, out string? database)
